@@ -1,0 +1,27 @@
+/* Universal: Start */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    text-decoration: none;
+    color: white;
+}
+/* Universal: End */
+
+/* Root: Start */
+/* Root: End */
+
+/* Body: Start */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(#71befd, #288fec, #0b72cf);
+}
+/* Body: End */
+
+/* Content: Start */
+
+/* Content: End */

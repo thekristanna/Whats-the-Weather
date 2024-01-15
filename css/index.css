@@ -1,1 +1,83 @@
-template
+/* Universal: Start */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    text-decoration: none;
+    color: white;
+}
+/* Universal: End */
+
+/* Root: Start */
+/* Root: End */
+
+/* Body: Start */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(#71befd, #288fec, #0b72cf);
+}
+/* Body: End */
+
+/* Content: Start */
+.weather {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.search {
+    margin-top: 20px;
+    text-align: start;
+    position: relative;
+    width: 300px;
+    background: rgba(255, 255, 255, 0.34);
+    border-radius: 25px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4.9px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+}
+input,
+button {
+    background: transparent;
+    border: none;
+    outline: none;
+}
+input {
+    padding: 15px 25px;
+    width: 90%;
+    color: white; 
+}
+input::placeholder {
+    color: rgb(255, 255, 255); 
+}
+button img {
+    width: 20px;
+    position: absolute;
+    top: 12px;
+    right: 20px;
+    cursor: pointer;
+}
+button img:hover {
+    transform: scale(1.05);
+}
+#sun-moon-image {
+    width: 100px; /* Adjust the width as needed */
+    position: absolute;
+    top: 100px; /* Adjust the initial top position */
+    animation: bounceUpDown 4s ease infinite alternate; /* Add this line */
+}
+
+@keyframes bounceUpDown {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px); /* Adjust the bounce height */
+    }
+}
+/* Content: End */
