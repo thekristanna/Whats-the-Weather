@@ -1,17 +1,125 @@
-<table>
-    <tr>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-    </tr>
-    <tr>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-    </tr>
-    <tr>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-    </tr>
-</table>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Remix icon -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.6.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/working.css" />
+    <!-- Favicon -->
+    <link rel="icon" href="../img/favicon.png" type="image/x-icon" />
+    <!-- Page Title -->
+    <title>Weather App</title>
+  </head>
+  <body>
+    <!-- Content: Start -->
+    <div class="grid-container">
+      <!-- part 1 -->
+      <div class="grid-item grid-item-1">
+        <div class="weather">
+          <div class="city">LOS ANGELES</div>
+          <div class="state-country">
+            <span><i class="ri-map-pin-fill"></i></span>
+            <span class="state">California</span>,
+            <span class="country">USA</span>
+          </div>
+          <div class="time-zone">
+            <span class="time">10:00 AM </span>
+            |
+            <span class="zone">GMT +8</span>
+          </div>
+          <div class="weather-image">
+            <img src="../img/sunny.png" alt="sun" />
+          </div>
+          <div class="weather-condition">
+            <span class="condition">SUNNY</span>
+            <span class="temperature">30°</span>
+          </div>
+          <div class="sunrise-sunset">
+            <span class="sunrise">sunrise: 5:30 am</span>
+            |
+            <span class="sunsent">sunset: 5:30 pm</span>
+          </div>
+        </div>
+        <div class="search">
+            <input type="text" id="city-input" placeholder="Enter City">
+            <button><img src="../img/search.png"></button>
+        </div>
+      </div>
+      
+      <!-- part 2 -->
+      <div class="grid-item grid-item-2">
+        <div class="forecast-daily">
+          <div class="day">Tomorrow</div>
+          <img class="day-img" src="../img/cloud-01.png" />
+          <div class="temp-daily">30°</div>
+        </div>
+      </div>
+      <div class="grid-item grid-item-3">
+        <div class="forecast-daily">
+          <div class="day">Tomorrow</div>
+          <img class="day-img" src="../img/cloud-01.png" />
+          <div class="temp-daily">30°</div>
+        </div>
+      </div>
+      <div class="grid-item grid-item-4">
+        <div class="forecast-daily">
+          <div class="day">Tomorrow</div>
+          <img class="day-img" src="../img/cloud-01.png" />
+          <div class="temp-daily">30°</div>
+        </div>
+      </div>
+      <div class="grid-item grid-item-5">
+        <div class="forecast-daily">
+          <div class="day">Tomorrow</div>
+          <img class="day-img" src="../img/cloud-01.png" />
+          <div class="temp-daily">30°</div>
+        </div>
+      </div>
+      <!-- part 3 -->
+      <div class="grid-item grid-item-6">
+        <div class="time">
+          <span class="hour">Now</span>
+          <span><img src="../img/cloud-01.png" /></span>
+          <span class="lowtemp">20°</span>
+          <span class="hightemp">30°</span>
+        </div>
+      </div>
+      <!-- part 4 -->
+      <div class="grid-item grid-item-7">
+        <div class="forecast-daily">
+          <div class="day">Tomorrow</div>
+          <img class="day-img" src="../img/cloud-01.png" />
+          <div class="temp-daily">30°</div>
+        </div>
+      </div>
+      <div class="grid-item grid-item-8">
+        <div class="forecast-daily">
+          <div class="day">Tomorrow</div>
+          <img class="day-img" src="../img/cloud-01.png" />
+          <div class="temp-daily">30°</div>
+        </div>
+      </div>
+      <div class="grid-item grid-item-9">
+        <div class="forecast-daily">
+          <div class="day">Tomorrow</div>
+          <img class="day-img" src="../img/cloud-01.png" />
+          <div class="temp-daily">30°</div>
+        </div>
+      </div>
+      <div class="grid-item grid-item-10">
+        <div class="forecast-daily">
+          <div class="day">Tomorrow</div>
+          <img class="day-img" src="../img/cloud-01.png" />
+          <div class="temp-daily">30°</div>
+        </div>
+      </div>
+    </div>
+    <!-- Content: End -->
+  </body>
+</html>
