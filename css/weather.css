@@ -2,12 +2,12 @@
 
 /* Universal: Start */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-    text-decoration: none;
-    color: white;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  color: white;
 }
 /* Universal: End */
 
@@ -16,62 +16,153 @@
 
 /* Body: Start */
 body {
-    display: grid;
-    place-items: center;
-    min-height: 100vh;
-    background: linear-gradient(#71befd, #288fec, #0b72cf);
-    overflow: hidden;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  background: linear-gradient(#71befd, #288fec, #0b72cf);
+  overflow: hidden;
+  margin: 0;
 }
-/* Content: End */
+/* Body: End */
 
 /* Content: Start */
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns */
-    grid-gap: 20px;
-    text-align: center;
+table {
+  width: 85%;
+  margin: auto;
+  border-collapse: collapse;
+  table-layout: fixed;
 }
-.container-1,
-.container-2,
-.container-3 {
-    display: block;
-    width: 100%;
-    margin: 30px;
+td {
+  border: 1px solid transparent;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.filler {
+  color: transparent;
+  height: 20px;
+  width: 20px;
+}
+
+/* tr1: td1 */
+.weather {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 25px;
+  backdrop-filter: blur(4.9px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  height: 570px;
+}
+.weather img {
+  width: 300px;
+}
+.city,
+.state-country,
+.condition,
+.temperature,
+.sunrise-sunset {
+  width: 100%;
+  margin: 0;
 }
 .city {
-    font-size: 3rem;
-    font-weight: 800;
+  font-size: 3rem;
+  font-weight: 800;
 }
 .state-country {
-    font-size: 1.5rem;
-    font-weight: 600;
-}
-.weather-condition {
-    /* margin-top: 300px; */
+  margin-top: -10px;
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 .condition {
-    font-size: 2.5rem;
-    font-weight: 600;
+  font-size: 2.5rem;
+  font-weight: 600;
 }
 .temperature {
-    font-size: 2rem;
-    font-weight: 200;
+  font-size: 2rem;
+  font-weight: 200;
 }
 .sunrise-sunset {
-    font-weight: 100;
+  font-weight: 100;
 }
-#sun {
-    width: 200px;
-    justify-self: center;
-    align-self: center;
+/* tr1 td2 td3 td4 td5 */
+.forecast-daily {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 25px;
+  backdrop-filter: blur(4.9px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  height: 170px;
+  width: 190px;
 }
-img {
-    width: 85%;
+.day {
+  font-size: 0.9rem;
+  font-weight: 200;
 }
-#cloud-01,
-#cloud-05 {
-    width: 200px;
-    justify-self: flex-end;
-    align-self: flex-start;
+.day-img {
+  width: 40px;
+  margin: 10px;
 }
+.temp-daily {
+  font-size: 2rem;
+  font-weight: 200;
+}
+.forecast-daily {
+  width: 100%;
+  position: relative;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 25px;
+  backdrop-filter: blur(4.9px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* tr5 td6 */
+.forecast-hourly {
+    position: relative; 
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 25px;
+    backdrop-filter: blur(4.9px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    height: 370px;
+}
+.time {
+    margin: 3px;
+    padding: 3px;
+}
+.time img {
+    width: 20px;
+}
+
+/* tr5 td7 td8 tr9 t9 td10 */
+.other {
+    width: 100%;
+    position: relative;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 25px;
+    backdrop-filter: blur(4.9px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    height: 170px;
+    width: 180px;
+}
+.other .header {
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+.other img {
+    width: 50px;
+}
+/* search */
+
 /* Content: End */
