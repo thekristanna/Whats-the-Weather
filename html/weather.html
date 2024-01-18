@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <!-- Remix icon -->
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@3.6.0/fonts/remixicon.css"
@@ -13,7 +13,10 @@
     <link rel="stylesheet" href="../css/weather.css" />
     <!-- Favicon -->
     <link rel="icon" href="../img/favicon.png" type="image/x-icon" />
+    <!-- JS -->
+    <script src="../js/weather.js"></script>
     <!-- Page Title -->
+
     <title>Weather App</title>
   </head>
   <body>
@@ -25,64 +28,61 @@
           <div class="city" id="city">LOS ANGELES</div>
           <div class="state-country">
             <span><i class="ri-map-pin-fill"></i></span>
-            <span class="state" id="state">California</span>,
             <span class="country" id="country">USA</span>
           </div>
           <div class="time-zone">
             <span class="time" id="time">10:00 AM </span>
-            |
-            <span class="zone" id="zone">GMT +8</span>
           </div>
           <div class="weather-image">
             <!-- <img src="../img/sunny.png" alt="sun" /> -->
             <img src="../img/sun.png" id="clearsky" />
           </div>
           <div class="weather-condition">
-            <span class="condition" id="condition">Clear Sky</span>
-            <span class="temperature" id="temperature"> 30°</span>
+            <span class="condition" id="weather_id">Clear Sky</span>
+            <span class="temperature" id="temp"> 30°</span>
           </div>
           <div class="sunrise-sunset">
-            <span class="sunrise" id="sunrise">sunrise: 5:30 am</span>
-            |
-            <span class="sunsent" id="sunset">sunset: 5:30 pm</span>
+            <span class="sunrise" id="rise_set">sunrise: 5:30 am</span>
           </div>
         </div>
         <div class="search">
-          <input type="text" id="search-input" placeholder="Enter City" />
-          <button><img src="../img/search.png" /></button>
+          <form>
+            <input type="text" id="weather_city" placeholder="Enter City" />
+            <button id="look"><img src="../img/search.png" /></button>
+          </form>
         </div>
         <!-- <div class="copyright">© thekristanna & zzzarkaztik | January 2024</div> -->
       </div>
       <!-- part 2 -->
-        <div class="grid-item grid-item-2">
-          <div class="forecast-daily">
-            <div class="day" id="day1">Tomorrow</div>
-            <img class="day-img" id="dayimg1" src="../img/cloud-01.png" />
-            <div class="temp-daily" id="daytemp1">30°</div>
-          </div>
+      <div class="grid-item grid-item-2">
+        <div class="forecast-daily">
+          <div class="day" id="day1">Tomorrow</div>
+          <img class="day-img" id="dayimg1" src="../img/cloud-01.png" />
+          <div class="temp-daily" id="daytemp1">30°</div>
         </div>
-        <div class="grid-item grid-item-3">
-          <div class="forecast-daily">
-            <div class="day" id="day2">Tomorrow</div>
-            <img class="day-img" id="dayimg2" src="../img/cloud-01.png" />
-            <div class="temp-daily" id="daytemp2">30°</div>
-          </div>
+      </div>
+      <div class="grid-item grid-item-3">
+        <div class="forecast-daily">
+          <div class="day" id="day2">Tomorrow</div>
+          <img class="day-img" id="dayimg2" src="../img/cloud-01.png" />
+          <div class="temp-daily" id="daytemp2">30°</div>
         </div>
+      </div>
 
-        <div class="grid-item grid-item-4">
-          <div class="forecast-daily">
-            <div class="day" id="day3">Tomorrow</div>
-            <img class="day-img" id="dayimg3" src="../img/cloud-01.png" />
-            <div class="temp-daily" id="daytemp3">30°</div>
-          </div>
+      <div class="grid-item grid-item-4">
+        <div class="forecast-daily">
+          <div class="day" id="day3">Tomorrow</div>
+          <img class="day-img" id="dayimg3" src="../img/cloud-01.png" />
+          <div class="temp-daily" id="daytemp3">30°</div>
         </div>
-        <div class="grid-item grid-item-5">
-          <div class="forecast-daily">
-            <div class="day" id="day4">Tomorrow</div>
-            <img class="day-img" id="dayimg4" src="../img/cloud-01.png" />
-            <div class="temp-daily" id="daytemp4">30°</div>
-          </div>
+      </div>
+      <div class="grid-item grid-item-5">
+        <div class="forecast-daily">
+          <div class="day" id="day4">Tomorrow</div>
+          <img class="day-img" id="dayimg4" src="../img/cloud-01.png" />
+          <div class="temp-daily" id="daytemp4">30°</div>
         </div>
+      </div>
 
       <!-- part 3 -->
       <div class="grid-item grid-item-6">
@@ -120,26 +120,30 @@
       <!-- part 4 -->
       <div class="grid-item grid-item-7">
         <div class="forecast-daily">
-          <div class="day" id="humidity">Humidity</div>
-          <div class="day-details" id="humidity-detail">75%</div>
+          <div class="day">Humidity</div>
+          <span class="day-details" id="humidity">75%</span>
         </div>
       </div>
       <div class="grid-item grid-item-8">
         <div class="forecast-daily">
-          <div class="day" id="temperature2">Temperature</div>
-          <div class="day-details" id="temperature2-detail">30°</div>
+          <div class="day" id="temperatures">
+            <p>Feels like: <span id="feels_like"></span></p>
+            <p>Min. Temp.: <span id="temp_min"></span></p>
+            <p>Max. Temp.: <span id="temp_max"></span></p>
+          </div>
         </div>
       </div>
       <div class="grid-item grid-item-9">
         <div class="forecast-daily">
-          <div class="day" id="pressure">Pressure</div>
-          <div class="day-details" id="pressure-detail">30°</div>
+          <div class="day">Pressure</div>
+          <div class="day-details" id="pressure">30°</div>
         </div>
       </div>
       <div class="grid-item grid-item-10">
         <div class="forecast-daily">
           <div class="day" id="wind">Wind</div>
-          <div class="day-details" id="wind-detail">30°</div>
+          <div class="day-details" id="windSpeed">30°</div>
+          <div class="day-details" id="direction">30°</div>
         </div>
       </div>
     </div>
