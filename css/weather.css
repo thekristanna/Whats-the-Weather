@@ -214,7 +214,7 @@ table img {
   margin: 5px;
 }
 .weather-image img {
-  max-width: 100%; 
+  width: 200px; 
 }
 #sun {
   width: 170px;
@@ -231,7 +231,7 @@ table img {
 
 
 /* Content: Keyframes */
-@keyframes rotateAndMove {
+/* @keyframes rotateAndMove {
   0% {
     transform: translateY(0) rotate(0deg);
   }
@@ -255,7 +255,7 @@ table img {
   50% {
     transform: translate(-30px, 20px);
   }
-}
+} */
 /* Content: Media Query */
 @media (max-width: 1000px) {
   .grid-container {
