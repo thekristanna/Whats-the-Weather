@@ -177,7 +177,7 @@ button img:hover {
   width: 40px;
 }
 .temp-daily {
-  font-size: 2rem;
+  font-size: 1rem;
   font-weight: 200;
 }
 /* part 3 */
@@ -222,20 +222,12 @@ table img {
   z-index: -1;
 }
 #cloud-01 {
-  width: 150px;
+  width: 170px;
   z-index: 2;
   position: absolute;
   transform: translate(-30px, 40px);
   animation: bounce 5s ease-in-out infinite;
 }
-#cloud-05 {
-  width: 120px;
-  z-index: 1;
-  position: absolute;
-  transform: translate(-800px, 40px);
-  animation: bounce 5s ease-in-out infinite;
-}
-
 
 
 /* Content: Keyframes */
