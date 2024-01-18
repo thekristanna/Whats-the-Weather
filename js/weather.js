@@ -21,6 +21,7 @@ $(document).ready(function () {
           break;
 
         case "Mist":
+        case "mist":
         case "fog":
           return "Misty";
           break;
@@ -55,6 +56,8 @@ $(document).ready(function () {
         case "Sunny":
         case "sunny":
         case "mostly_sunny":
+          return "Sunny";
+          break;
         case "clear_(night)":
         case "clear":
         case "clear sky":
@@ -156,6 +159,7 @@ $(document).ready(function () {
       $("#temp_min").text(`${temp_min}°C`);
       $("#temp_max").text(`${temp_max}°C`);
       $("#pressure").text(`${w.main.pressure} hPa`);
+      $("#main_img").attr(`src`, `../img/${weather}.png`);
 
       console.log(weather);
       console.log(w.weather[0].description);
@@ -193,6 +197,7 @@ $(document).ready(function () {
             }
 
             $(`#hour${i}`).text(hour.hour + ampm);
+            $(`#hour${i}img`).attr(`src`, `../img/${hour.weather}.png`);
             $(`#hour${i}temp`).text(`${hour.temperature} °C`);
           }
           //     const row = document.createElement("tr");
@@ -246,6 +251,7 @@ $(document).ready(function () {
             const dayName = getDayName(i); // Get the day name using the getDayName function
             $(`#day${i}`).text(dayName);
             $(`#daytemp${i}`).text(`${day.temperature} °C`);
+            $(`#dayimg${i}`).attr(`src`, `../img/${day.weather}.png`);
           }
         }
 
