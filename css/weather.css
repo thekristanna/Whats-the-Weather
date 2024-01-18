@@ -213,7 +213,7 @@ button img:hover {
   }
 }
 /* Content: Media Query */
-@media (max-width: 1070px) {
+@media (max-width: 1000px) {
   .grid-container {
     display: flex;
     flex-wrap: wrap; 
