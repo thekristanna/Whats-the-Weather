@@ -1,0 +1,24 @@
+background colors:
+
+A - day
+
+B - night
+
+
+weather categories:
+
+A - day
+1. cloudy
+2. misty
+3. rainy
+4. snowy
+5. sunny
+6. thunderstorms
+
+B - night
+1. clear sky
+2. cloudy
+3. rainy
+4. snowy
+5. thunderstorms
+

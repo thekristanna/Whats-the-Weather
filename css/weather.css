@@ -65,6 +65,16 @@ body {
     backdrop-filter: blur(4.9px);
     border: 1px solid rgba(255, 255, 255, 0.3); */
   }
+
+  .grid-item-2, .grid-item-3, .grid-item-4,.grid-item-5, .grid-item-7, .grid-item-8, .grid-item-9, .grid-item-10 {
+    width: 150px;
+    height: 150px;
+  }
+  .grid-item-6 {
+    width: 320px;
+    height: 325px;
+  }
+  
 /* Body: End */
 
 /* Content: Start */
@@ -171,11 +181,30 @@ button img:hover {
   font-weight: 200;
 }
 /* part 3 */
-.time img {
+table img {
     width: 40px;
 }
 /* part 4 */
-
+.day {
+  font-size: 1rem;
+  font-weight: 200;
+}
+#humidity {
+  font-size: 3rem;
+}
+.temp-feels {
+  font-size: 0.7rem;
+}
+#feels_like {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+#windSpeed, #direction {
+  font-size: 1.2rem;
+}
+#pressure {
+  font-size: 1.5rem;
+}
 /* weather icons */
 .weather-image {
   height: 200px;
@@ -187,9 +216,24 @@ button img:hover {
 .weather-image img {
   max-width: 100%; 
 }
-#clearsky {
+#sun {
   width: 170px;
   animation: rotateAndMove 10s linear infinite;
+  z-index: -1;
+}
+#cloud-01 {
+  width: 150px;
+  z-index: 2;
+  position: absolute;
+  transform: translate(-30px, 40px);
+  animation: bounce 5s ease-in-out infinite;
+}
+#cloud-05 {
+  width: 120px;
+  z-index: 1;
+  position: absolute;
+  transform: translate(-800px, 40px);
+  animation: bounce 5s ease-in-out infinite;
 }
 
 
@@ -210,6 +254,14 @@ button img:hover {
   }
   100% {
     transform: translateY(0) rotate(360deg);
+  }
+}
+@keyframes bounce {
+  0%, 100% {
+    transform: translate(-30px, 40px);
+  }
+  50% {
+    transform: translate(-30px, 20px);
   }
 }
 /* Content: Media Query */

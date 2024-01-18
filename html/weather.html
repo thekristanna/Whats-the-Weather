@@ -34,8 +34,8 @@
             <span class="time" id="time">10:00 AM </span>
           </div>
           <div class="weather-image">
-            <!-- <img src="../img/sunny.png" alt="sun" /> -->
-            <img src="../img/sun.png" id="clearsky" />
+            <img src="../img/cloud-01.png" id="cloud-01">
+            <img src="../img/sun.png" id="sun" />
           </div>
           <div class="weather-condition">
             <span class="condition" id="weather_id">Clear Sky</span>
@@ -53,6 +53,7 @@
         </div>
         <!-- <div class="copyright">© thekristanna & zzzarkaztik | January 2024</div> -->
       </div>
+
       <!-- part 2 -->
       <div class="grid-item grid-item-2">
         <div class="forecast-daily">
@@ -86,37 +87,40 @@
 
       <!-- part 3 -->
       <div class="grid-item grid-item-6">
-        <div class="time">
-          <span class="hour">Now</span>
-          <span><img src="../img/cloud-01.png" /></span>
-          <span class="hour-temp">20°</span>
-        </div>
-        <div class="time">
-          <span class="hour">Now</span>
-          <span><img src="../img/cloud-01.png" /></span>
-          <span class="hour-temp">20°</span>
-        </div>
-        <div class="time">
-          <span class="hour">Now</span>
-          <span><img src="../img/cloud-01.png" /></span>
-          <span class="hour-temp">20°</span>
-        </div>
-        <div class="time">
-          <span class="hour">Now</span>
-          <span><img src="../img/cloud-01.png" /></span>
-          <span class="hour-temp">20°</span>
-        </div>
-        <div class="time">
-          <span class="hour">Now</span>
-          <span><img src="../img/cloud-01.png" /></span>
-          <span class="hour-temp">20°</span>
-        </div>
-        <div class="time">
-          <span class="hour">Now</span>
-          <span><img src="../img/cloud-01.png" /></span>
-          <span class="hour-temp">20°</span>
-        </div>
+        <table>
+          <tr>
+            <td>Now</td>
+            <td><img src="../img/cloud-02.png"></td>
+            <td>30°</td>
+          </tr>
+          <tr>
+            <td>Now</td>
+            <td><img src="../img/cloud-02.png"></td>
+            <td>30°</td>
+          </tr>
+          <tr>
+            <td>Now</td>
+            <td><img src="../img/cloud-02.png"></td>
+            <td>30°</td>
+          </tr>
+          <tr>
+            <td>Now</td>
+            <td><img src="../img/cloud-02.png"></td>
+            <td>30°</td>
+          </tr>
+          <tr>
+            <td>Now</td>
+            <td><img src="../img/cloud-02.png"></td>
+            <td>30°</td>
+          </tr>
+          <tr>
+            <td>Now</td>
+            <td><img src="../img/cloud-02.png"></td>
+            <td>30°</td>
+          </tr>
+        </table>
       </div>
+
       <!-- part 4 -->
       <div class="grid-item grid-item-7">
         <div class="forecast-daily">
@@ -126,24 +130,26 @@
       </div>
       <div class="grid-item grid-item-8">
         <div class="forecast-daily">
-          <div class="day" id="temperatures">
-            <p>Feels like: <span id="feels_like"></span></p>
-            <p>Min. Temp.: <span id="temp_min"></span></p>
-            <p>Max. Temp.: <span id="temp_max"></span></p>
+          <div class="day" id="temperatures">Feels like: 
+            <span id="feels_like"></span>
+            <p class="temp-feels">Min.: <span id="temp_min"></span></p>
+            <p class="temp-feels">Max.: <span id="temp_max"></span></p>
           </div>
         </div>
       </div>
       <div class="grid-item grid-item-9">
         <div class="forecast-daily">
           <div class="day">Pressure</div>
-          <div class="day-details" id="pressure">30°</div>
+          <div class="day-details" id="pressure"></div>
         </div>
       </div>
       <div class="grid-item grid-item-10">
         <div class="forecast-daily">
           <div class="day" id="wind">Wind</div>
-          <div class="day-details" id="windSpeed">30°</div>
-          <div class="day-details" id="direction">30°</div>
+          <div class="day-details">
+            <span id="windSpeed">124km/h</span><br/>
+            <span id="direction">North</span>
+          </div>
         </div>
       </div>
     </div>
