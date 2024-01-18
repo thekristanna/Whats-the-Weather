@@ -1,4 +1,20 @@
 $(document).ready(function () {
+  const urlParams = new URLSearchParams(window.location.search);
+  const searchCity = urlParams.get("city");
+
+  // If 'city' parameter exists, perform the search
+  if (searchCity) {
+    // Set the value of the input field with the retrieved city
+    $("#weather_city").val(searchCity);
+
+    // Trigger the form submission programmatically
+    $("#weatherForm").submit();
+
+    setTimeout(function () {
+      $("#look").trigger("click");
+    }, 100); // 500 milliseconds delay (adjust as needed)
+  }
+
   $("#look").click(function (x) {
     let w;
     let weather_city = $("#weather_city").val();
@@ -11,11 +27,14 @@ $(document).ready(function () {
         case "overcast":
         case "overcast clouds":
         case "partly_sunny":
+        case "partly sunny":
         case "scattered clouds":
         case "few clouds":
         case "broken clouds":
         case "partly_clear":
+        case "partly clear":
         case "mostly_cloudy":
+        case "mostly cloudy":
         case "cloudy":
           return "Cloudy";
           break;
@@ -28,14 +47,19 @@ $(document).ready(function () {
 
         case "Rain":
         case "light_rain":
+        case "light rain":
         case "rain":
         case "freezing_rain":
+        case "freezing rain":
         case "psbl_freezing_rain":
+        case "psbl freezing rain":
         case "hail":
         case "moderate rain":
         case "heavy intensity rain":
         case "psbl_rain":
+        case "psbl rain":
         case "rain_shower":
+        case "rain shower":
         case "psbl_freezing_rain_(night)":
         case "rain_shower_(night)":
           return "Rainy";
@@ -43,11 +67,16 @@ $(document).ready(function () {
 
         case "Snow":
         case "light_snow":
+        case "light snow":
         case "snow":
         case "psbl_snow":
+        case "psbl snow":
         case "snow_shower":
+        case "snow shower":
         case "rain_and_snow":
+        case "rain and snow":
         case "psbl_rain_and_snow":
+        case "psbl rain and snow":
         case "snow_shower_(night)":
         case "rain_and_snow_(night)":
           return "Snowy";
@@ -56,6 +85,7 @@ $(document).ready(function () {
         case "Sunny":
         case "sunny":
         case "mostly_sunny":
+        case "mostly sunny":
           return "Sunny";
           break;
         case "clear_(night)":
@@ -63,13 +93,14 @@ $(document).ready(function () {
         case "clear sky":
         case "mostly_clear_(night)":
         case "mostly_clear":
+        case "mostly clear":
           return "Clear";
           break;
 
         case "Thunderstorm":
         case "thunderstorm":
         case "local_thunderstorms":
-        case "local_hunderstorms":
+        case "local thunderstorms":
           return "Thunderstorms";
           break;
 

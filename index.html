@@ -1,29 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-     <!-- CSS -->
-    <link rel="stylesheet" href="css/index.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/index.css" />
     <!-- Favicon -->
-    <link rel="icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="icon" href="img/favicon.png" type="image/x-icon" />
     <!-- Page Title -->
     <title>Weather App</title>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Content: Start -->
-    <div class="weather"> 
-        <h1>What's the Weather?</h1>
-        <div class="search">
-            <input type="text" id="city-input" placeholder="Enter City">
-            <button><img src="img/search.png"></button>
-        </div>
+    <div class="weather">
+      <h1>What's the Weather?</h1>
+      <div class="search">
+        <!-- Modify the form action to include the city parameter in the URL -->
+        <form action="html/weather.html" id="weatherForm" method="get">
+          <input
+            type="text"
+            id="weather_city"
+            name="city"
+            placeholder="Enter City"
+          />
+          <button type="submit" id="look">
+            <img src="img/search.png" />
+          </button>
+        </form>
+      </div>
     </div>
     <!-- Content: End -->
 
     <!-- JavaScript -->
-    <script src="js/index.js"></script>
-</body>
+  </body>
 </html>
-
