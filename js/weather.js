@@ -9,6 +9,7 @@ $(document).ready(function () {
       switch (weatherCondition) {
         case "Clouds":
         case "overcast":
+        case "overcast clouds":
         case "partly_sunny":
         case "scattered clouds":
         case "broken clouds":
@@ -29,6 +30,7 @@ $(document).ready(function () {
         case "freezing_rain":
         case "psbl_freezing_rain":
         case "hail":
+        case "moderate rain":
         case "heavy intensity rain":
         case "psbl_rain":
         case "rain_shower":
@@ -167,38 +169,38 @@ $(document).ready(function () {
       $.ajax(settings2).done(function (response) {
         console.log(response);
 
-        const hourlyData = response.hourly.data.map((hour) => ({
-          hour: new Date(hour.date).getHours(),
-          temperature: hour.temperature,
-          weather: hour.weather,
-        }));
+        // const hourlyData = response.hourly.data.map((hour) => ({
+        //   hour: new Date(hour.date).getHours(),
+        //   temperature: hour.temperature,
+        //   weather: hour.weather,
+        // }));
 
-        // Log the extracted data (you can use it as needed)
-        console.log(hourlyData);
-        function hourlyTable() {
-          const tableBody = document.querySelector("#hourlyTable tbody");
-          tableBody.innerHTML = "";
-          for (let i = 0; i < 12; i++) {
-            const hour = hourlyData[i];
-            hour.weather = centralizeWeather(hour.weather);
-            let ampm = "AM"; // Default to AM
+        // // Log the extracted data (you can use it as needed)
+        // console.log(hourlyData);
+        // function hourlyTable() {
+        //   const tableBody = document.querySelector("#hourlyTable tbody");
+        //   tableBody.innerHTML = "";
+        //   for (let i = 0; i < 12; i++) {
+        //     const hour = hourlyData[i];
+        //     hour.weather = centralizeWeather(hour.weather);
+        //     let ampm = "AM"; // Default to AM
 
-            if (hour.hour === 0) {
-              hour.hour = 12; // Midnight is 12:00 AM
-            } else if (hour.hour >= 12) {
-              ampm = "PM";
-              // Convert to 12-hour format
-              hour.hour = hour.hour % 12 || 12;
-            }
+        //     if (hour.hour === 0) {
+        //       hour.hour = 12; // Midnight is 12:00 AM
+        //     } else if (hour.hour >= 12) {
+        //       ampm = "PM";
+        //       // Convert to 12-hour format
+        //       hour.hour = hour.hour % 12 || 12;
+        //     }
 
-            const row = document.createElement("tr");
-            row.innerHTML = `
-              <td>${hour.hour} ${ampm}</td>
-              <td>${hour.temperature}</td>
-              <td>${hour.weather}</td>`;
-            tableBody.appendChild(row);
-          }
-        }
+        //     const row = document.createElement("tr");
+        //     row.innerHTML = `
+        //       <td>${hour.hour} ${ampm}</td>
+        //       <td>${hour.temperature}</td>
+        //       <td>${hour.weather}</td>`;
+        //     tableBody.appendChild(row);
+        //   }
+        // }
 
         const dailyData = response.daily.data.map((day) => ({
           day: new Date(day.day).getDay(),
@@ -210,9 +212,7 @@ $(document).ready(function () {
         console.log(dailyData);
 
         // Call the function to populate the table
-        function dailyTable() {
-          const tableBody = document.querySelector("#dailyTable tbody");
-
+        function dailyBoxes() {
           function getDayName(dayIndex) {
             const daysOfWeek = [
               "SUN",
@@ -236,25 +236,19 @@ $(document).ready(function () {
               return daysOfWeek[nextDayIndex];
             }
           }
-          tableBody.innerHTML = "";
+
           // Your existing loop
           for (let i = 1; i < 5; i++) {
             const day = dailyData[i];
             day.weather = centralizeWeather(day.weather);
             const dayName = getDayName(i); // Get the day name using the getDayName function
-
-            const row = document.createElement("tr");
-            row.innerHTML = `
-              <td>${dayName}</td>
-              <td>${day.temperature}</td>
-              <td>${day.weather}</td>`;
-
-            tableBody.appendChild(row);
+            $(`#day${i}`).text(dayName);
+            $(`#daytemp${i}`).text(`${day.temperature} °C`);
           }
         }
 
-        hourlyTable();
-        dailyTable();
+        // hourlyTable();
+        dailyBoxes();
       });
     });
     x.preventDefault();
