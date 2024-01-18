@@ -12,6 +12,7 @@ $(document).ready(function () {
         case "overcast clouds":
         case "partly_sunny":
         case "scattered clouds":
+        case "few clouds":
         case "broken clouds":
         case "partly_clear":
         case "mostly_cloudy":
@@ -169,38 +170,39 @@ $(document).ready(function () {
       $.ajax(settings2).done(function (response) {
         console.log(response);
 
-        // const hourlyData = response.hourly.data.map((hour) => ({
-        //   hour: new Date(hour.date).getHours(),
-        //   temperature: hour.temperature,
-        //   weather: hour.weather,
-        // }));
+        const hourlyData = response.hourly.data.map((hour) => ({
+          hour: new Date(hour.date).getHours(),
+          temperature: hour.temperature,
+          weather: hour.weather,
+        }));
 
-        // // Log the extracted data (you can use it as needed)
-        // console.log(hourlyData);
-        // function hourlyTable() {
-        //   const tableBody = document.querySelector("#hourlyTable tbody");
-        //   tableBody.innerHTML = "";
-        //   for (let i = 0; i < 12; i++) {
-        //     const hour = hourlyData[i];
-        //     hour.weather = centralizeWeather(hour.weather);
-        //     let ampm = "AM"; // Default to AM
+        // Log the extracted data (you can use it as needed)
+        console.log(hourlyData);
+        function hourlyTable() {
+          for (let i = 1; i < 7; i++) {
+            const hour = hourlyData[i];
+            hour.weather = centralizeWeather(hour.weather);
+            let ampm = "AM"; // Default to AM
 
-        //     if (hour.hour === 0) {
-        //       hour.hour = 12; // Midnight is 12:00 AM
-        //     } else if (hour.hour >= 12) {
-        //       ampm = "PM";
-        //       // Convert to 12-hour format
-        //       hour.hour = hour.hour % 12 || 12;
-        //     }
+            if (hour.hour === 0) {
+              hour.hour = 12; // Midnight is 12:00 AM
+            } else if (hour.hour >= 12) {
+              ampm = "PM";
+              // Convert to 12-hour format
+              hour.hour = hour.hour % 12 || 12;
+            }
 
-        //     const row = document.createElement("tr");
-        //     row.innerHTML = `
-        //       <td>${hour.hour} ${ampm}</td>
-        //       <td>${hour.temperature}</td>
-        //       <td>${hour.weather}</td>`;
-        //     tableBody.appendChild(row);
-        //   }
-        // }
+            $(`#hour${i}`).text(hour.hour + ampm);
+            $(`#hour${i}temp`).text(`${hour.temperature} °C`);
+          }
+          //     const row = document.createElement("tr");
+          //     row.innerHTML = `
+          //       <td>${hour.hour} ${ampm}</td>
+          //       <td>${hour.temperature}</td>
+          //       <td>${hour.weather}</td>`;
+          //     tableBody.appendChild(row);
+          //   }
+        }
 
         const dailyData = response.daily.data.map((day) => ({
           day: new Date(day.day).getDay(),
@@ -247,7 +249,7 @@ $(document).ready(function () {
           }
         }
 
-        // hourlyTable();
+        hourlyTable();
         dailyBoxes();
       });
     });
