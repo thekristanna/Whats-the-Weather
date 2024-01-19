@@ -485,7 +485,7 @@ $(document).ready(function () {
         $("#temp_min").text(`${temp_min}°C`);
         $("#temp_max").text(`${temp_max}°C`);
         $("#pressure").text(`${w.main.pressure} hPa`);
-        $("#main_img").attr(`src`, `../img/${weather}.png`);
+        $("#main_img").attr(`src`, `../img/${weather.toLowerCase()}.png`);
 
         console.log(weather);
         console.log(w.weather[0].description);
@@ -523,7 +523,10 @@ $(document).ready(function () {
               }
 
               $(`#hour${i}`).text(hour.hour + ampm);
-              $(`#hour${i}img`).attr(`src`, `../img/${hour.weather}.png`);
+              $(`#hour${i}img`).attr(
+                `src`,
+                `../img/${hour.weather.toLowerCase()}.png`
+              );
               $(`#hour${i}temp`).text(`${hour.temperature} °C`);
             }
             //     const row = document.createElement("tr");
@@ -577,7 +580,10 @@ $(document).ready(function () {
               const dayName = getDayName(i); // Get the day name using the getDayName function
               $(`#day${i}`).text(dayName);
               $(`#daytemp${i}`).text(`${day.temperature} °C`);
-              $(`#dayimg${i}`).attr(`src`, `../img/${day.weather}.png`);
+              $(`#dayimg${i}`).attr(
+                `src`,
+                `../img/${day.weather.toLowerCase()}.png`
+              );
             }
           }
 
