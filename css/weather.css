@@ -339,7 +339,6 @@ table img {
 }
 .tooltip:hover {
   outline: 1px solid white;
-  z-index: 1000000;
 }
 
 /* Content: Keyframes */
