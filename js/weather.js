@@ -293,3 +293,32 @@ $(document).ready(function () {
     x.preventDefault();
   });
 });
+
+// sun animation
+window.addEventListener('load', function() {
+  var img = document.getElementById('main_img');
+
+  function updateImageClass() {
+    var imgSrc = img.getAttribute('src');
+    if (imgSrc.endsWith('img/sunny.png')) {
+      img.classList.add('sunny-animation');
+    } else {
+      img.classList.remove('sunny-animation');
+    }
+  }
+  var observer = new MutationObserver(function(mutations) {
+    mutations.forEach(function(mutation) {
+      if (mutation.type === 'attributes' && mutation.attributeName === 'src') {
+        updateImageClass();
+      }
+    });
+  });
+  observer.observe(img, { attributes: true });
+  updateImageClass();
+});
+
+
+
+
+
+
