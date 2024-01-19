@@ -362,7 +362,7 @@ $(document).ready(function () {
         break;
 
       default:
-        return "Atmospheric Phenomenon";
+        return "Caution";
     }
   }
 
