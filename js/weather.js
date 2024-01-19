@@ -460,6 +460,8 @@ $(document).ready(function () {
           $("body").css("background-image", 'url("../img/bg1.svg")');
         } else if (weather === "Stormy") {
           $("body").css("background-image", 'url("../img/bg3.svg")');
+        } else if (weather === "Caution") {
+          $("body").css("background-image", 'url("../img/bg4.svg")');
         } else {
           $("body").css("background-image", 'url("../img/bg2.svg")');
         }
