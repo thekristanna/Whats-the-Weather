@@ -42,7 +42,6 @@ body {
   background: rgba(255, 255, 255, 0.15);
   border-radius: 25px;
   backdrop-filter: blur(4.9px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
   height: 100%;
 }
 .grid-item-1 {
@@ -298,11 +297,11 @@ table img {
 .tooltip-text {
   visibility: hidden;
   text-align: left;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.8);
   margin-top: 60px;
   padding: 16px;
   background: rgba(0, 0, 0, 0.7);
-  border-radius: 16px;
+  border-radius: 25px;
   backdrop-filter: blur(32px);
   -webkit-backdrop-filter: blur(32px);
   opacity: 0;
@@ -429,7 +428,7 @@ table img {
   }
   .grid-item-9 .tooltip-text,
   .grid-item-10 .tooltip-text {
-    bottom: 110px;
+    bottom: 170px;
   }
 
   .grid-item-8 .tooltip-text,
