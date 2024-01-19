@@ -69,7 +69,8 @@ button img:hover {
   transform: scale(1.1);
   transition: ease-in-out 0.2s;
 }
-/* Tooltips */
+
+/* tooltips */
 
 .tooltip-text {
   visibility: hidden;
@@ -83,16 +84,16 @@ button img:hover {
   -webkit-backdrop-filter: blur(32px);
   opacity: 0;
   transition: opacity 200ms ease-in-out;
-
-  /* Position the tooltip */
   position: absolute;
 }
-
+#tooltip-search {
+  font-size: 0.7rem;
+}
 .tooltip:hover .tooltip-text {
   visibility: visible;
   opacity: 1;
 }
-
+/* Content: Media Query */
 @media (max-width: 500px) {
   .weather {
     transform: scale(0.9);
