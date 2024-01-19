@@ -84,7 +84,6 @@ body {
   grid-column: 6 / span 1;
   grid-row: span 1;
 }
-
 .grid-item-1 {
   padding: 20px;
   text-align: center;
@@ -96,7 +95,6 @@ body {
     backdrop-filter: blur(4.9px);
     border: 1px solid rgba(255, 255, 255, 0.3); */
 }
-
 .grid-item-2,
 .grid-item-3,
 .grid-item-4,
@@ -201,6 +199,7 @@ button img:hover {
   font-size: 0.5rem;
   font-weight: 400;
 }
+
 /* part 2 */
 .forecast-daily {
   display: flex;
@@ -219,10 +218,12 @@ button img:hover {
   font-size: 1rem;
   font-weight: 200;
 }
+
 /* part 3 */
 table img {
   width: 40px;
 }
+
 /* part 4 */
 .day {
   font-size: 1rem;
@@ -289,11 +290,10 @@ table img {
   animation: sunny-bounce 10s linear infinite;
 }
 
-/* Tooltips */
+/* tooltips */
 .tooltip {
   position: relative;
 }
-
 .tooltip-text {
   visibility: hidden;
   text-align: left;
@@ -306,41 +306,35 @@ table img {
   -webkit-backdrop-filter: blur(32px);
   opacity: 0;
   transition: opacity 200ms ease-in-out;
-
-  /* Position the tooltip */
   position: absolute;
 }
-
+#tooltip-search {
+  font-size: 0.7rem;
+}
 .grid-item .tooltip-text {
   width: 319px;
   height: 150px;
 }
-
 .grid-item-7 .tooltip-text,
 .grid-item-8 .tooltip-text {
   top: 114px;
 }
-
 .grid-item-9 .tooltip-text,
 .grid-item-10 .tooltip-text {
   bottom: 174px;
 }
-
 .grid-item-8 .tooltip-text,
 .grid-item-10 .tooltip-text {
   right: 0px;
 }
-
 .grid-item-7 .tooltip-text,
 .grid-item-9 .tooltip-text {
   left: 0px;
 }
-
 .tooltip:hover .tooltip-text {
   visibility: visible;
   opacity: 1;
 }
-
 .tooltip:hover {
   outline: 1px solid white;
   z-index: 1000000;
