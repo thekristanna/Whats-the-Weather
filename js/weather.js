@@ -427,157 +427,187 @@ $(document).ready(function () {
       method: "GET",
     };
 
-    $.ajax(settings1).done(function (response) {
-      console.log(response);
-      w = response;
-
-      // Displaying time in 12-hour format
-      let formattedTime = enochToReadable(w.dt, w.timezone);
-      let formattedSunrise = enochToReadable(w.sys.sunrise, w.timezone);
-      let formattedSunset = enochToReadable(w.sys.sunset, w.timezone);
-      let direction = degreesToDirection(w.wind.deg);
-      let country = getCountryName(w.sys.country);
-
-      let formattedTimezone = w.timezone / 3600;
-      if (formattedTimezone >= 0) {
-        formattedTimezone = `+${formattedTimezone}`;
-      }
-      let temp = round(w.main.temp);
-      let feels_like = round(w.main.feels_like);
-      let temp_min = round(w.main.temp_min);
-      let temp_max = round(w.main.temp_max);
-
-      weather = centralizeWeather(w.weather[0].description);
-
-      if (w.dt > w.sys.sunset || w.dt < w.sys.sunrise) {
-        if (weather === "Clear") {
-          $("body").css("background-image", 'url("../img/background-05.jpg")');
-        } else {
-          $("body").css("background-image", 'url("../img/background-04.jpg")');
-        }
-      } else if (weather === "Sunny") {
-        $("body").css("background-image", 'url("../img/background-01.jpg")');
-      } else if (weather === "Stormy") {
-        $("body").css("background-image", 'url("../img/background-03.jpg")');
-      } else {
-        $("body").css("background-image", 'url("../img/background-02.jpg")');
-      }
-
-      $("#city").text(w.name);
-      $("#country").text(country);
-      $("#time").text(`${formattedTime} | UTC${formattedTimezone}`);
-      $("#rise_set").text(
-        `Sunrise: ${formattedSunrise} | Sunset: ${formattedSunset}`
-      );
-      $("#weather_id").text(weather);
-      $("#windSpeed").text(`${w.wind.speed}m/s`);
-      $("#direction").text(direction);
-      $("#humidity").text(`${w.main.humidity}%`);
-      $("#temp").text(`${temp}°C`);
-      $("#feels_like").text(`${feels_like}°C`);
-      $("#temp_min").text(`${temp_min}°C`);
-      $("#temp_max").text(`${temp_max}°C`);
-      $("#pressure").text(`${w.main.pressure} hPa`);
-      $("#main_img").attr(`src`, `../img/${weather}.png`);
-
-      console.log(weather);
-      console.log(w.weather[0].description);
-
-      const settings2 = {
-        async: true,
-        crossDomain: true,
-        url: `https://www.meteosource.com/api/v1/free/point?lat=${w.coord.lat}&lon=${w.coord.lon}&sections=all&timezone=auto&language=en&units=auto&key=${api_key2}`,
-        method: "GET",
-      };
-
-      $.ajax(settings2).done(function (response) {
+    $.ajax(settings1)
+      .done(function (response) {
         console.log(response);
+        w = response;
 
-        const hourlyData = response.hourly.data.map((hour) => ({
-          hour: new Date(hour.date).getHours(),
-          temperature: hour.temperature,
-          weather: hour.weather,
-        }));
+        // Displaying time in 12-hour format
+        let formattedTime = enochToReadable(w.dt, w.timezone);
+        let formattedSunrise = enochToReadable(w.sys.sunrise, w.timezone);
+        let formattedSunset = enochToReadable(w.sys.sunset, w.timezone);
+        let direction = degreesToDirection(w.wind.deg);
+        let country = getCountryName(w.sys.country);
 
-        // Log the extracted data (you can use it as needed)
-        console.log(hourlyData);
-        function hourlyTable() {
-          for (let i = 1; i < 7; i++) {
-            const hour = hourlyData[i];
-            hour.weather = centralizeWeather(hour.weather);
-            let ampm = "AM"; // Default to AM
+        let formattedTimezone = w.timezone / 3600;
+        if (formattedTimezone >= 0) {
+          formattedTimezone = `+${formattedTimezone}`;
+        }
+        let temp = round(w.main.temp);
+        let feels_like = round(w.main.feels_like);
+        let temp_min = round(w.main.temp_min);
+        let temp_max = round(w.main.temp_max);
 
-            if (hour.hour === 0) {
-              hour.hour = 12; // Midnight is 12:00 AM
-            } else if (hour.hour >= 12) {
-              ampm = "PM";
-              // Convert to 12-hour format
-              hour.hour = hour.hour % 12 || 12;
-            }
+        weather = centralizeWeather(w.weather[0].description);
 
-            $(`#hour${i}`).text(hour.hour + ampm);
-            $(`#hour${i}img`).attr(`src`, `../img/${hour.weather}.png`);
-            $(`#hour${i}temp`).text(`${hour.temperature} °C`);
+        if (w.dt > w.sys.sunset || w.dt < w.sys.sunrise) {
+          if (weather === "Clear") {
+            $("body").css(
+              "background-image",
+              'url("../img/background-05.jpg")'
+            );
+          } else {
+            $("body").css(
+              "background-image",
+              'url("../img/background-04.jpg")'
+            );
           }
-          //     const row = document.createElement("tr");
-          //     row.innerHTML = `
-          //       <td>${hour.hour} ${ampm}</td>
-          //       <td>${hour.temperature}</td>
-          //       <td>${hour.weather}</td>`;
-          //     tableBody.appendChild(row);
-          //   }
+        } else if (weather === "Sunny") {
+          $("body").css("background-image", 'url("../img/background-01.jpg")');
+        } else if (weather === "Stormy") {
+          $("body").css("background-image", 'url("../img/background-03.jpg")');
+        } else {
+          $("body").css("background-image", 'url("../img/background-02.jpg")');
         }
 
-        const dailyData = response.daily.data.map((day) => ({
-          day: new Date(day.day).getDay(),
-          temperature: day.all_day.temperature,
-          weather: day.all_day.weather,
-        }));
+        $("#city").text(w.name);
+        $("#country").text(country);
+        $("#time").text(`${formattedTime} | UTC${formattedTimezone}`);
+        $("#rise_set").text(
+          `Sunrise: ${formattedSunrise} | Sunset: ${formattedSunset}`
+        );
+        $("#weather_id").text(weather);
+        $("#windSpeed").text(`${w.wind.speed}m/s`);
+        $("#direction").text(direction);
+        $("#humidity").text(`${w.main.humidity}%`);
+        $("#temp").text(`${temp}°C`);
+        $("#feels_like").text(`${feels_like}°C`);
+        $("#temp_min").text(`${temp_min}°C`);
+        $("#temp_max").text(`${temp_max}°C`);
+        $("#pressure").text(`${w.main.pressure} hPa`);
+        $("#main_img").attr(`src`, `../img/${weather}.png`);
 
-        // Log the extracted data (you can use it as needed)
-        console.log(dailyData);
+        console.log(weather);
+        console.log(w.weather[0].description);
 
-        // Call the function to populate the table
-        function dailyBoxes() {
-          function getDayName(dayIndex) {
-            const daysOfWeek = [
-              "SUN",
-              "MON",
-              "TUE",
-              "WED",
-              "THU",
-              "FRI",
-              "SAT",
-            ];
+        const settings2 = {
+          async: true,
+          crossDomain: true,
+          url: `https://www.meteosource.com/api/v1/free/point?lat=${w.coord.lat}&lon=${w.coord.lon}&sections=all&timezone=auto&language=en&units=auto&key=${api_key2}`,
+          method: "GET",
+        };
 
-            if (dayIndex === -1) {
-              return "YTD";
-            } else if (dayIndex === 0) {
-              return "TDY";
-            } else if (dayIndex === 1) {
-              return "TOM";
-            } else {
-              // If dayIndex is greater than 1, use days of the week array
-              const nextDayIndex = (dayIndex - 2) % 7;
-              return daysOfWeek[nextDayIndex];
+        $.ajax(settings2).done(function (response) {
+          console.log(response);
+
+          const hourlyData = response.hourly.data.map((hour) => ({
+            hour: new Date(hour.date).getHours(),
+            temperature: hour.temperature,
+            weather: hour.weather,
+          }));
+
+          // Log the extracted data (you can use it as needed)
+          console.log(hourlyData);
+          function hourlyTable() {
+            for (let i = 1; i < 7; i++) {
+              const hour = hourlyData[i];
+              hour.weather = centralizeWeather(hour.weather);
+              let ampm = "AM"; // Default to AM
+
+              if (hour.hour === 0) {
+                hour.hour = 12; // Midnight is 12:00 AM
+              } else if (hour.hour >= 12) {
+                ampm = "PM";
+                // Convert to 12-hour format
+                hour.hour = hour.hour % 12 || 12;
+              }
+
+              $(`#hour${i}`).text(hour.hour + ampm);
+              $(`#hour${i}img`).attr(`src`, `../img/${hour.weather}.png`);
+              $(`#hour${i}temp`).text(`${hour.temperature} °C`);
+            }
+            //     const row = document.createElement("tr");
+            //     row.innerHTML = `
+            //       <td>${hour.hour} ${ampm}</td>
+            //       <td>${hour.temperature}</td>
+            //       <td>${hour.weather}</td>`;
+            //     tableBody.appendChild(row);
+            //   }
+          }
+
+          const dailyData = response.daily.data.map((day) => ({
+            day: new Date(day.day).getDay(),
+            temperature: day.all_day.temperature,
+            weather: day.all_day.weather,
+          }));
+
+          // Log the extracted data (you can use it as needed)
+          console.log(dailyData);
+
+          // Call the function to populate the table
+          function dailyBoxes() {
+            function getDayName(dayIndex) {
+              const daysOfWeek = [
+                "SUN",
+                "MON",
+                "TUE",
+                "WED",
+                "THU",
+                "FRI",
+                "SAT",
+              ];
+
+              if (dayIndex === -1) {
+                return "YTD";
+              } else if (dayIndex === 0) {
+                return "TDY";
+              } else if (dayIndex === 1) {
+                return "TOM";
+              } else {
+                // If dayIndex is greater than 1, use days of the week array
+                const nextDayIndex = (dayIndex - 2) % 7;
+                return daysOfWeek[nextDayIndex];
+              }
+            }
+
+            // Your existing loop
+            for (let i = 1; i < 5; i++) {
+              const day = dailyData[i];
+              day.weather = centralizeWeather(day.weather);
+              const dayName = getDayName(i); // Get the day name using the getDayName function
+              $(`#day${i}`).text(dayName);
+              $(`#daytemp${i}`).text(`${day.temperature} °C`);
+              $(`#dayimg${i}`).attr(`src`, `../img/${day.weather}.png`);
             }
           }
 
-          // Your existing loop
-          for (let i = 1; i < 5; i++) {
-            const day = dailyData[i];
-            day.weather = centralizeWeather(day.weather);
-            const dayName = getDayName(i); // Get the day name using the getDayName function
-            $(`#day${i}`).text(dayName);
-            $(`#daytemp${i}`).text(`${day.temperature} °C`);
-            $(`#dayimg${i}`).attr(`src`, `../img/${day.weather}.png`);
-          }
+          hourlyTable();
+          dailyBoxes();
+        });
+      })
+      .fail(function (jqXHR, textStatus, errorThrown) {
+        // Handle failure
+        console.error("Error: ", errorThrown);
+        function showError() {
+          // Display the floating message with the error
+          var floatingMessage = document.getElementById("floatingMessage");
+          floatingMessage.style.display = "block";
+
+          // Fade out the message after 6 seconds
+          setTimeout(function () {
+            floatingMessage.style.opacity = "0";
+          }, 6000);
+
+          // Hide the message after the fade out animation completes
+          setTimeout(function () {
+            floatingMessage.style.display = "none";
+            floatingMessage.style.opacity = "1"; // Reset opacity for future messages
+          }, 6500);
         }
 
-        hourlyTable();
-        dailyBoxes();
+        // Example usage: Call showError function with an error message
+        showError();
       });
-    });
     x.preventDefault();
   });
 });
