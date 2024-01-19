@@ -21,7 +21,7 @@ body {
   align-items: center;
   min-height: 100vh;
   /* background: linear-gradient(#71befd, #288fec, #0b72cf); */
-  background: url("../img/background-01.png");
+  background: url("../img/background-01.jpg");
   background-size: cover;
 }
 /* Body: End */
@@ -91,5 +91,11 @@ button img:hover {
 .tooltip:hover .tooltip-text {
   visibility: visible;
   opacity: 1;
+}
+
+@media (max-width: 500px) {
+  .weather {
+    transform: scale(0.9);
+  }
 }
 /* Content: End */
