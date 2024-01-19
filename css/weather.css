@@ -20,7 +20,7 @@ body {
   place-items: center;
   min-height: 100vh;
   /* background: linear-gradient(#71befd, #288fec, #0b72cf); */
-  background: url("../img/background-04.jpg");
+  background: url("../img/bg4.svg");
   background-size: cover;
   /* overflow: hidden; */
   margin: 0;

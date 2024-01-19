@@ -452,22 +452,16 @@ $(document).ready(function () {
 
         if (w.dt > w.sys.sunset || w.dt < w.sys.sunrise) {
           if (weather === "Clear") {
-            $("body").css(
-              "background-image",
-              'url("../img/background-05.jpg")'
-            );
+            $("body").css("background-image", 'url("../img/bg5.svg")');
           } else {
-            $("body").css(
-              "background-image",
-              'url("../img/background-04.jpg")'
-            );
+            $("body").css("background-image", 'url("../img/bg4.svg")');
           }
         } else if (weather === "Sunny") {
-          $("body").css("background-image", 'url("../img/background-01.jpg")');
+          $("body").css("background-image", 'url("../img/bg1.svg")');
         } else if (weather === "Stormy") {
-          $("body").css("background-image", 'url("../img/background-03.jpg")');
+          $("body").css("background-image", 'url("../img/bg3.svg")');
         } else {
-          $("body").css("background-image", 'url("../img/background-02.jpg")');
+          $("body").css("background-image", 'url("../img/bg2.svg")');
         }
 
         $("#city").text(w.name);
