@@ -40,10 +40,19 @@
             <span class="temperature" id="temp"> 30°</span>
           </div>
           <div class="sunrise-sunset">
-            <span class="sunrise" id="rise_set">Sunrise: 5:30 AM | Sunset: 5:30 PM</span>
+            <span class="sunrise" id="rise_set"
+              >Sunrise: 5:30 AM | Sunset: 5:30 PM</span
+            >
           </div>
         </div>
-        <div class="search">
+        <div class="search tooltip">
+          <div class="tooltip-text">
+            <p>
+              Search any city worldwide. For precision, use commas, e.g.,
+              <br />
+              <i>La Union, PH</i>
+            </p>
+          </div>
           <form>
             <input type="text" id="weather_city" placeholder="Enter City" />
             <button id="look"><img src="../img/search.png" /></button>
@@ -119,39 +128,64 @@
       </div>
 
       <!-- part 4 -->
-      <div class="grid-item grid-item-7">
+      <div class="grid-item grid-item-7 tooltip">
         <div class="forecast-daily">
-          <div class="day"><span><img src="../img/humidity.png" id="icon-humidity"></span>Humidity</div>
+          <div class="tooltip-text">
+            <p>
+              <b>Humidity:</b> Indicates the amount of moisture in the air. High
+              humidity can make it feel warmer, while low humidity may lead to a
+              drier atmosphere.
+            </p>
+          </div>
+          <div class="day">Humidity</div>
           <span class="day-details" id="humidity">75%</span>
         </div>
       </div>
-      <div class="grid-item grid-item-8">
+      <div class="grid-item grid-item-8 tooltip">
         <div class="forecast-daily">
           <div class="day" id="temperatures">
-            <span><img src="../img/temperature.png" id="icon-temperature"></span>
+            <div class="tooltip-text">
+              <p>
+                <b>Temperature (Feels Like, Min, Max):</b> Shows perceived
+                temperature, factoring in humidity and wind, with daily minimum
+                and maximum values.
+              </p>
+            </div>
             Feels like:
+            <span id="feels_like"></span>
+            <p class="temp-feels">Min: <span id="temp_min"></span></p>
+            <p class="temp-feels">Max: <span id="temp_max"></span></p>
           </div>
-          <span id="feels_like"> 28°</span>
-          <p class="temp-feels">Min.: <span id="temp_min">28°</span></p>
-          <p class="temp-feels">Max.: <span id="temp_max">28°</span></p>
         </div>
       </div>
-      <div class="grid-item grid-item-9">
+      <div class="grid-item grid-item-9 tooltip">
+        <div class="tooltip-text">
+          <p>
+            <b>Pressure:</b> Indicates atmospheric pressure. High pressure often
+            means fair weather, while low pressure may signal unsettled
+            conditions.
+          </p>
+        </div>
         <div class="forecast-daily">
-          <div class="day"><span><img src="../img/pressure.png" id="icon-pressure"></span>Pressure</div>
-          <div class="day-details" id="pressure">820 hPa</div>
+          <div class="day">Pressure</div>
+          <div class="day-details" id="pressure"></div>
         </div>
       </div>
-      <div class="grid-item grid-item-10">
+      <div class="grid-item grid-item-10 tooltip">
+        <div class="tooltip-text">
+          <p>
+            <b>Wind:</b> Shows speed and direction. Speed influences temperature
+            perception, and direction indicates the source of the wind.
+          </p>
+        </div>
         <div class="forecast-daily">
-          <div class="day" id="wind"><span><img src="../img/wind.png" id="icon-wind"></span>Wind</div>
+          <div class="day" id="wind">Wind</div>
           <div class="day-details">
-            <span id="windSpeed">124km/h</span>
+            <span id="windSpeed">124km/h</span><br />
             <span id="direction">North</span>
           </div>
         </div>
       </div>
-      
     </div>
     <!-- Content: End -->
   </body>

@@ -2,12 +2,12 @@
 
 /* Universal: Start */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-    text-decoration: none;
-    color: white;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  color: white;
 }
 /* Universal: End */
 
@@ -16,58 +16,80 @@
 
 /* Body: Start */
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-      /* background: linear-gradient(#71befd, #288fec, #0b72cf); */
-  background: url('../img/background-00.jpg');
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  /* background: linear-gradient(#71befd, #288fec, #0b72cf); */
+  background: url("../img/background-01.png");
   background-size: cover;
 }
 /* Body: End */
 
 /* Content: Start */
 .weather {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 .search {
-    margin-top: 20px;
-    text-align: start;
-    position: relative;
-    width: 300px;
-    background: rgba(255, 255, 255, 0.15);
-    border-radius: 25px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(4.9px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-
+  margin-top: 20px;
+  text-align: start;
+  position: relative;
+  width: 300px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 25px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4.9px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 input,
 button {
-    background: transparent;
-    border: none;
-    outline: none;
+  background: transparent;
+  border: none;
+  outline: none;
 }
 input {
-    padding: 15px 25px;
-    width: 90%;
-    color: white; 
+  padding: 15px 25px;
+  width: 90%;
+  color: white;
 }
 input::placeholder {
-    color: rgb(255, 255, 255); 
+  color: rgb(255, 255, 255);
 }
 button img {
-    width: 20px;
-    position: absolute;
-    top: 14px;
-    right: 20px;
-    cursor: pointer;
+  width: 20px;
+  position: absolute;
+  top: 14px;
+  right: 20px;
+  cursor: pointer;
 }
 button img:hover {
-    transform: scale(1.1);
-    transition: ease-in-out 0.2s;
+  transform: scale(1.1);
+  transition: ease-in-out 0.2s;
+}
+/* Tooltips */
+
+.tooltip-text {
+  visibility: hidden;
+  max-width: 300px;
+  color: rgba(255, 255, 255, 0.4);
+  margin-top: 60px;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 16px;
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+  opacity: 0;
+  transition: opacity 200ms ease-in-out;
+
+  /* Position the tooltip */
+  position: absolute;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
 }
 /* Content: End */
