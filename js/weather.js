@@ -461,7 +461,7 @@ $(document).ready(function () {
         } else if (weather === "Stormy") {
           $("body").css("background-image", 'url("../img/bg3.svg")');
         } else if (weather === "Caution") {
-          $("body").css("background-image", 'url("../img/bg4.svg")');
+          $("body").css("background-image", 'url("../img/bg6.svg")');
         } else {
           $("body").css("background-image", 'url("../img/bg2.svg")');
         }
