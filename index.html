@@ -4,10 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Remix icon -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.6.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
     <!-- CSS -->
     <link rel="stylesheet" href="css/index.css" />
     <!-- Favicon -->
     <link rel="icon" href="img/favicon.png" type="image/x-icon" />
+    <!-- JS -->
+    <script src="js/index.js"></script>
     <!-- Page Title -->
     <title>What's the Weather?</title>
   </head>
@@ -35,7 +42,12 @@
           </button>
         </form>
       </div>
+      <div class="about-icon-container" onclick="goAbout()">
+        <span id="about">About Us <i class="ri-arrow-right-circle-line"></i></span>
+      </div>      
     </div>
+  
+
     <!-- Content: End -->
 
     <!-- JavaScript -->

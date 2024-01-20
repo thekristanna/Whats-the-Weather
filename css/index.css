@@ -93,6 +93,38 @@ button img:hover {
   visibility: visible;
   opacity: 1;
 }
+.about-icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 20px;     
+  right: 25px;       
+}
+
+#about {
+color: white;
+font-size: 0.7rem;
+margin: auto;
+background: rgba(255, 255, 255, 0.15);
+border-radius: 25px;
+backdrop-filter: blur(4.9px);
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+border: 1px solid rgba(255, 255, 255, 0.3);
+padding: 5px 10px;
+display: flex;
+align-items: center;
+}
+#about:hover {
+  transform: translateX(10px);
+  transition: ease-in-out 0.3s;
+  cursor: pointer;
+}
+.ri-arrow-right-circle-line {
+color: white;
+font-size: 1rem;
+margin-left: 5px;
+}
 /* Content: Media Query */
 @media (max-width: 500px) {
   .weather {
@@ -100,3 +132,4 @@ button img:hover {
   }
 }
 /* Content: End */
+
