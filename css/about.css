@@ -1,0 +1,201 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* Universal: Start */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  color: #7c9ab6;
+}
+/* Universal: End */
+
+/* Root: Start */
+/* Root: End */
+
+/* Body: Start */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  /* background: linear-gradient(#71befd, #288fec, #0b72cf); */
+  background: url("../img/background-01.jpg");
+  background-size: cover;
+}
+/* Body: End */
+
+/* Content: Start */
+.container {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 25px;
+  backdrop-filter: blur(4.9px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  margin: 50px 150px;
+}
+.about {
+    padding-top: 25px;
+    text-align: justify;
+    margin: 0 100px;
+  }
+.about h1 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+  text-align: center;
+  color: #455e76;
+}
+.about p {
+  color: white;
+  font-size: 0.8rem;
+}
+.app {
+  font-weight: 700;
+  color: #455e76;
+}
+#maynard {
+  width: 100%;
+  margin-top: -25px;
+}
+#kristanna {
+  width: 100%;
+}
+.team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 5px;
+  transform: scale(0.8);
+}
+#team-header {
+  color: white;
+  font-size: 1rem;
+  position: relative;
+  z-index: 1;
+  font-size: 1.5rem;
+}
+.team-cards {
+  display: flex;
+}
+.card {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  background: #7c9ab6;
+  overflow: hidden;
+  border-radius: 20px;
+  margin: 15px 15px 50px 15px;
+}
+.name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 15px;
+  color: #455e76;
+}
+.content {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 300px;
+  padding: 20px 30px;
+  background: #f5f5f5;
+  border-top-left-radius: 20px;
+  transform: translateY(225px);
+  transition: transform 0.5s;
+}
+.content::before {
+  content: "";
+  position: absolute;
+  top: -47px;
+  right: -45px;
+  width: 100px;
+  height: 100px;
+  transform: rotate(-175deg);
+  border-radius: 50%;
+  box-shadow: inset 48px 48px #f5f5f5;
+}
+.subtitle {
+  display: block;
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+}
+.details {
+  font-size: 0.7rem;
+}
+.card:hover .content {
+  transform: translateY(50px);
+  padding: 30px;
+}
+.card:hover .socials {
+  opacity: 1;
+  transition-delay: 0.25s;
+}
+.links {
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  margin-left: -10px;
+}
+.links a i {
+  font-size: 1.8rem;
+  gap: 10px;
+}
+.ri-github-fill {
+  margin-left: 8px;
+}
+.ri-github-fill:hover {
+  color: #455e76;
+}
+.ri-linkedin-box-fill:hover {
+  color: #455e76;
+}
+.home-icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 25px; 
+    left: 0;
+    right: 0;
+  }
+#home {
+  color: white;
+  font-size: 1rem;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 25px;
+  backdrop-filter: blur(4.9px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+}
+#home:hover {
+    transform: translateX(-10px);
+    transition: ease-in-out 0.3s;
+}
+.ri-arrow-left-circle-line span {
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 600;
+  margin-left: 5px;
+}
+/* Content: Media Query */
+@media (max-width: 500px) {
+  .team,
+  .card,
+  .team-cards {
+    display: block;
+  }
+  .card {
+    transform: scale(0.8);
+  }
+  #team-header {
+    font-size: 0.7rem;
+  }
+}
+/* Content: End */
+ 
+  
