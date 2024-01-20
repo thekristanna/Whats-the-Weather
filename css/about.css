@@ -27,14 +27,21 @@ body {
 /* Body: End */
 
 /* Content: Start */
+.parent-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
 .container {
   background: rgba(255, 255, 255, 0.15);
   border-radius: 25px;
   backdrop-filter: blur(4.9px);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  margin: 50px 150px;
+  margin: 50px 50px 20px 50px;
 }
+
+/* part 1 */
 .about {
   padding-top: 25px;
   text-align: justify;
@@ -54,6 +61,8 @@ body {
   font-weight: 700;
   color: #455e76;
 }
+
+/* part 2 */
 #maynard {
   width: 100%;
   margin-top: -25px;
@@ -86,7 +95,7 @@ body {
   background: #7c9ab6;
   overflow: hidden;
   border-radius: 20px;
-  margin: 15px 15px 50px 15px;
+  margin: 15px 15px 0px 15px;
 }
 .name {
   font-size: 1.1rem;
@@ -158,20 +167,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  bottom: 25px;
-  left: 0;
-  right: 0;
+  margin-bottom: 20px;
 }
 #home {
   color: white;
   font-size: 0.7rem;
   margin: auto;
-/*   background: rgba(255, 255, 255, 0.15);
-  border-radius: 25px;
-  backdrop-filter: blur(4.9px);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.3); */
   padding: 5px 10px;
   display: flex;
   align-items: center;
@@ -198,6 +199,9 @@ body {
   }
 }
 /* Content: Media Query */
+@media (max-width: 1000px) {
+
+}
 @media (max-width: 500px) {
   .about {
     margin: 10px;
@@ -213,7 +217,7 @@ body {
   }
   .card {
     transform: scale(0.8);
-    margin: -10px 5px 5px 5px;
+    margin: -10px 5px -25px 5px;
   }
   #team-header {
     margin-top: -50px;
