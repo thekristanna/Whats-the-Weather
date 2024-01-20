@@ -423,7 +423,7 @@ $(document).ready(function () {
     const settings1 = {
       async: true,
       crossDomain: true,
-      url: `https://api.openweathermap.org/data/2.5/weather?q=${weather_city}&appid=${api_key1}&units=metric`,
+      url: `https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=${weather_city}&appid=${api_key1}&units=metric`,
       method: "GET",
     };
 
@@ -489,7 +489,7 @@ $(document).ready(function () {
         const settings2 = {
           async: true,
           crossDomain: true,
-          url: `https://www.meteosource.com/api/v1/free/point?lat=${w.coord.lat}&lon=${w.coord.lon}&sections=all&timezone=auto&language=en&units=auto&key=${api_key2}`,
+          url: `https://cors-anywhere.herokuapp.com/http://www.meteosource.com/api/v1/free/point?lat=${w.coord.lat}&lon=${w.coord.lon}&sections=all&timezone=auto&language=en&units=auto&key=${api_key2}`,
           method: "GET",
         };
 
