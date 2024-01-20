@@ -5,4 +5,4 @@ DEVELOPERS: <br/>
 
 https://www.whatstheweather.live/
 
-![Website Preview](img/screenshot-whatstheweather.png)
+![Website Preview](img/screenshot-preview.png)
