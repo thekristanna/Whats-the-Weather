@@ -101,29 +101,39 @@ button img:hover {
   bottom: 20px;     
   right: 25px;       
 }
-
 #about {
-color: white;
-font-size: 0.7rem;
-margin: auto;
-background: rgba(255, 255, 255, 0.15);
-border-radius: 25px;
-backdrop-filter: blur(4.9px);
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-border: 1px solid rgba(255, 255, 255, 0.3);
-padding: 5px 10px;
-display: flex;
-align-items: center;
-}
-#about:hover {
-  transform: translateX(10px);
-  transition: ease-in-out 0.3s;
-  cursor: pointer;
+  color: white;
+  font-size: 0.7rem;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 25px;
+  backdrop-filter: blur(4.9px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
 }
 .ri-arrow-right-circle-line {
-color: white;
-font-size: 1rem;
-margin-left: 5px;
+  color: white;
+  font-size: 1rem;
+  margin-left: 5px;
+  transition: transform 0.3s ease-in-out;
+}
+#about:hover {
+  cursor: pointer;
+}
+#about:hover .ri-arrow-right-circle-line {
+  animation: hover-move 0.6s ease-in-out alternate infinite;
+}
+/* Content: Keyframes */
+@keyframes hover-move {
+  from {
+    transform: translateX(2px);
+  }
+  to {
+    transform: translateX(-2px);
+  }
 }
 /* Content: Media Query */
 @media (max-width: 500px) {

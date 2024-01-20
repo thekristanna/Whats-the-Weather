@@ -165,7 +165,7 @@ body {
 }
 #home {
   color: white;
-  font-size: 1rem;
+  font-size: 0.7rem;
   margin: auto;
   background: rgba(255, 255, 255, 0.15);
   border-radius: 25px;
@@ -176,16 +176,26 @@ body {
   display: flex;
   align-items: center;
 }
+.ri-arrow-left-circle-line {
+  color: white;
+  font-size: 1rem;
+  margin-right: 5px;
+  transition: transform 0.3s ease-in-out;
+}
 #home:hover {
-  transform: translateX(-10px);
-  transition: ease-in-out 0.3s;
   cursor: pointer;
 }
-.ri-arrow-left-circle-line span {
-  color: white;
-  font-size: 0.7rem;
-  font-weight: 600;
-  margin-left: 5px;
+#home:hover .ri-arrow-left-circle-line {
+  animation: hover-move 0.6s ease-in-out alternate infinite;
+}
+/* Content: Keyframes */
+@keyframes hover-move {
+  from {
+    transform: translateX(2px);
+  }
+  to {
+    transform: translateX(-2px);
+  }
 }
 /* Content: Media Query */
 @media (max-width: 500px) {

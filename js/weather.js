@@ -637,3 +637,8 @@ window.addEventListener("load", function () {
   observer.observe(img, { attributes: true });
   updateImageClass();
 });
+
+// home button
+function goHome() {
+  window.location.href = "../index.html"; 
+}
