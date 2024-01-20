@@ -351,7 +351,7 @@ table img {
   justify-content: center;
   align-items: center;
   margin-top: 20px;
-  margin-bottom: 100px;
+  margin-bottom: 30px;
 }
 #home {
   color: white;
@@ -442,6 +442,9 @@ table img {
     width: 650px;
     margin: 0px 20px;
   }
+  .home-icon-container {
+    margin-bottom: 100px;
+  }
 }
 @media (max-width: 500px) {
   .grid-item-1 {
@@ -473,6 +476,7 @@ table img {
   }
   .home-icon-container {
     margin-top: 0px;
+    margin-bottom: 30px;
   }
 }
 /* error message */
