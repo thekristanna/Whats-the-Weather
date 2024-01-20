@@ -492,7 +492,6 @@ $(document).ready(function () {
           crossDomain: true,
           url: `https://www.meteosource.com/api/v1/free/point?lat=${w.coord.lat}&lon=${w.coord.lon}&sections=all&timezone=auto&language=en&units=auto&key=${api_key2}`,
           method: "GET",
-          dataType: "jsonp",
         };
 
         $.ajax(settings2).done(function (response) {
