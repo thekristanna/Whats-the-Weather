@@ -451,6 +451,12 @@ $(document).ready(function () {
 
         let weather = centralizeWeather(w.weather[0].description);
 
+        if (weather === "Clear") {
+          if (w.dt > w.sys.sunrise) {
+            weather === "Sunny";
+          }
+        }
+
         setBackgroundImage(weather, w.dt);
 
         $("#city").text(w.name);
