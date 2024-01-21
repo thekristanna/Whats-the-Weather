@@ -419,7 +419,7 @@ $(document).ready(function () {
     const settings1 = {
       async: true,
       crossDomain: true,
-      url: `https://cors-anywhere.herokuapp.com/https://api.openweathermap.org/data/2.5/weather?q=${weather_city}&appid=${openWeatherAPIKey}&units=metric`,
+      url: `https://api.openweathermap.org/data/2.5/weather?q=${weather_city}&appid=${openWeatherAPIKey}&units=metric`,
       method: "GET",
       dataType: "jsonp",
     };
