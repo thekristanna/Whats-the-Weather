@@ -105,7 +105,7 @@ body {
   height: 150px;
 }
 .grid-item-6 {
-  width: 319px;
+  width: 315px;
   height: 325px;
 }
 
@@ -115,7 +115,7 @@ body {
 .parent-container {
   display: flex;
   flex-direction: column;
-  align-items: center; 
+  align-items: center;
 }
 /* part 1 */
 .weather {
@@ -315,16 +315,16 @@ table img {
   font-size: 0.7rem;
 }
 .grid-item .tooltip-text {
-  width: 319px;
+  width: 315px;
   height: 150px;
 }
 .grid-item-7 .tooltip-text,
 .grid-item-8 .tooltip-text {
-  top: 114px;
+  top: 113px;
 }
 .grid-item-9 .tooltip-text,
 .grid-item-10 .tooltip-text {
-  bottom: 174px;
+  bottom: 173px;
 }
 .grid-item-8 .tooltip-text,
 .grid-item-10 .tooltip-text {
@@ -487,8 +487,8 @@ table img {
   left: 50%;
   width: 230px;
   transform: translateX(-50%);
-  background-color: rgba(255, 0, 0, 0.8); 
-  color: #fff; 
+  background-color: rgba(255, 0, 0, 0.8);
+  color: #fff;
   padding: 16px;
   border-radius: 25px;
   backdrop-filter: blur(32px);
