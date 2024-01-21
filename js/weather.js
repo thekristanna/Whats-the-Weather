@@ -351,8 +351,12 @@ $(document).ready(function () {
   function setBackgroundImage(weather, time) {
     let backgroundImage;
 
-    if ((time > w.sys.sunset || time < w.sys.sunrise) && weather === "Clear") {
-      backgroundImage = 'url("../img/bg5.svg")';
+    if (time > w.sys.sunset || time < w.sys.sunrise) {
+      if (weather === "Clear") {
+        backgroundImage = 'url("../img/bg5.svg")';
+      } else {
+        backgroundImage = 'url("../img/bg4.svg")';
+      }
     } else if (weather === "Sunny") {
       backgroundImage = 'url("../img/bg1.svg")';
     } else if (weather === "Stormy") {
@@ -509,13 +513,6 @@ $(document).ready(function () {
                 );
                 $(`#hour${i}temp`).text(`${hour.temperature} °C`);
               }
-              //     const row = document.createElement("tr");
-              //     row.innerHTML = `
-              //       <td>${hour.hour} ${ampm}</td>
-              //       <td>${hour.temperature}</td>
-              //       <td>${hour.weather}</td>`;
-              //     tableBody.appendChild(row);
-              //   }
             }
 
             const dailyData = response.daily.data.map((day) => ({
