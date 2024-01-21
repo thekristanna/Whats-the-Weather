@@ -453,7 +453,7 @@ $(document).ready(function () {
 
         if (weather === "Clear") {
           if (w.dt > w.sys.sunrise) {
-            weather === "Sunny";
+            weather = "Sunny";
           }
         }
 
