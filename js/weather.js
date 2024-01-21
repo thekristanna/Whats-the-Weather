@@ -354,6 +354,8 @@ $(document).ready(function () {
     if (time > w.sys.sunset || time < w.sys.sunrise) {
       if (weather === "Clear") {
         backgroundImage = 'url("../img/bg5.svg")';
+      } else if (weather === "Caution") {
+        backgroundImage = 'url("../img/bg6.svg")';
       } else {
         backgroundImage = 'url("../img/bg4.svg")';
       }
