@@ -21,203 +21,203 @@
   <body>
     <!-- Content: Start -->
     <div class="parent-container">
-    <div class="grid-container">
-      <!-- part 1 -->
-      <div class="grid-item-1">
-        <div class="weather">
-          <div class="city" id="city">LOADING</div>
-          <div class="state-country">
-            <span><i class="ri-map-pin-fill"></i></span>
-            <span class="country" id="country">LOADING</span>
+      <div class="grid-container">
+        <!-- part 1 -->
+        <div class="grid-item-1">
+          <div class="weather">
+            <div class="city" id="city">LOADING</div>
+            <div class="state-country">
+              <span><i class="ri-map-pin-fill"></i></span>
+              <span class="country" id="country">LOADING</span>
+            </div>
+            <div class="time-zone">
+              <span class="time" id="time">00:00 AM | LOADING</span>
+            </div>
+            <div class="weather-image">
+              <img id="main_img" src="../img/sunny.png" />
+            </div>
+            <div class="weather-condition">
+              <span class="condition" id="weather_id">LOADING</span>
+              <span class="temperature" id="temp"> 00°</span>
+            </div>
+            <div class="sunrise-sunset">
+              <span class="sunrise" id="rise_set">Loading... | Loading...</span>
+            </div>
           </div>
-          <div class="time-zone">
-            <span class="time" id="time">00:00 AM | LOADING</span>
+          <div class="search tooltip">
+            <div class="tooltip-text">
+              <p id="tooltip-search">
+                Search any city worldwide. For precision, use commas, e.g.,
+                <i>La Union, PH</i>.
+                <br />
+                Learn more
+                <a href="https://www.iban.com/country-codes" target="_blank"
+                  >here</a
+                >.
+              </p>
+            </div>
+            <form>
+              <input type="text" id="weather_city" placeholder="Enter City" />
+              <button id="look"><img src="../img/search.png" /></button>
+            </form>
+            <div id="floatingMessage" class="floating-message">
+              <p>
+                City not found! Use the country's alpha-2 code, like "US" for
+                the United States. Find alpha-2 codes
+                <a href="https://www.iban.com/country-codes" target="_blank"
+                  >here</a
+                >.
+              </p>
+            </div>
           </div>
-          <div class="weather-image">
-            <img id="main_img" src="../img/sunny.png" />
-          </div>
-          <div class="weather-condition">
-            <span class="condition" id="weather_id">LOADING</span>
-            <span class="temperature" id="temp"> 00°</span>
-          </div>
-          <div class="sunrise-sunset">
-            <span class="sunrise" id="rise_set">Loading... | Loading...</span>
-          </div>
+          <!-- <div class="copyright">© thekristanna & zzzarkaztik | January 2024</div> -->
         </div>
-        <div class="search tooltip">
-          <div class="tooltip-text">
-            <p id="tooltip-search">
-              Search any city worldwide. For precision, use commas, e.g.,
-              <i>La Union, PH</i>.
-              <br />
-              Learn more
-              <a href="https://www.iban.com/country-codes" target="_blank"
-                >here</a
-              >.
-            </p>
-          </div>
-          <form>
-            <input type="text" id="weather_city" placeholder="Enter City" />
-            <button id="look"><img src="../img/search.png" /></button>
-          </form>
-          <div id="floatingMessage" class="floating-message">
-            <p>
-              City not found! Use the country's alpha-2 code, like "US" for the
-              United States. Find alpha-2 codes
-              <a href="https://www.iban.com/country-codes" target="_blank"
-                >here</a
-              >.
-            </p>
-          </div>
-        </div>
-        <!-- <div class="copyright">© thekristanna & zzzarkaztik | January 2024</div> -->
-      </div>
 
-      <!-- part 2 -->
-      <div class="grid-item grid-item-2">
-        <div class="forecast-daily">
-          <div class="day" id="day1">Loading...</div>
-          <img class="day-img" id="dayimg1" src="../img/snowy.png" />
-          <div class="temp-daily" id="daytemp1">00°</div>
+        <!-- part 2 -->
+        <div class="grid-item grid-item-2">
+          <div class="forecast-daily">
+            <div class="day" id="day1">Loading...</div>
+            <img class="day-img" id="dayimg1" src="../img/snowy.png" />
+            <div class="temp-daily" id="daytemp1">00°</div>
+          </div>
         </div>
-      </div>
-      <div class="grid-item grid-item-3">
-        <div class="forecast-daily">
-          <div class="day" id="day2">Loading...</div>
-          <img class="day-img" id="dayimg2" src="../img/cloudy.png" />
-          <div class="temp-daily" id="daytemp2">00°</div>
+        <div class="grid-item grid-item-3">
+          <div class="forecast-daily">
+            <div class="day" id="day2">Loading...</div>
+            <img class="day-img" id="dayimg2" src="../img/cloudy.png" />
+            <div class="temp-daily" id="daytemp2">00°</div>
+          </div>
         </div>
-      </div>
-      <div class="grid-item grid-item-4">
-        <div class="forecast-daily">
-          <div class="day" id="day3">Loading...</div>
-          <img class="day-img" id="dayimg3" src="../img/sunny.png" />
-          <div class="temp-daily" id="daytemp3">00°</div>
+        <div class="grid-item grid-item-4">
+          <div class="forecast-daily">
+            <div class="day" id="day3">Loading...</div>
+            <img class="day-img" id="dayimg3" src="../img/sunny.png" />
+            <div class="temp-daily" id="daytemp3">00°</div>
+          </div>
         </div>
-      </div>
-      <div class="grid-item grid-item-5">
-        <div class="forecast-daily">
-          <div class="day" id="day4">Loading...</div>
-          <img class="day-img" id="dayimg4" src="../img/stormy.png" />
-          <div class="temp-daily" id="daytemp4">00°</div>
+        <div class="grid-item grid-item-5">
+          <div class="forecast-daily">
+            <div class="day" id="day4">Loading...</div>
+            <img class="day-img" id="dayimg4" src="../img/stormy.png" />
+            <div class="temp-daily" id="daytemp4">00°</div>
+          </div>
         </div>
-      </div>
 
-      <!-- part 3 -->
-      <div class="grid-item grid-item-6">
-        <table>
-          <tr>
-            <td id="hour1">...</td>
-            <td><img id="hour1img" src="../img/snowy.png" /></td>
-            <td id="hour1temp">00°</td>
-          </tr>
-          <tr>
-            <td id="hour2">...</td>
-            <td><img id="hour2img" src="../img/cloudy.png" /></td>
-            <td id="hour2temp">00°</td>
-          </tr>
-          <tr>
-            <td id="hour3">...</td>
-            <td><img id="hour3img" src="../img/cloudy.png" /></td>
-            <td id="hour3temp">00°</td>
-          </tr>
-          <tr>
-            <td id="hour4">...</td>
-            <td><img id="hour4img" src="../img/rainy.png" /></td>
-            <td id="hour4temp">00°</td>
-          </tr>
-          <tr>
-            <td id="hour5">...</td>
-            <td><img id="hour5img" src="../img/stormy.png" /></td>
-            <td id="hour5temp">00°</td>
-          </tr>
-          <tr>
-            <td id="hour6">...</td>
-            <td><img id="hour6img" src="../img/sunny.png" /></td>
-            <td id="hour6temp">00°</td>
-          </tr>
-        </table>
-      </div>
+        <!-- part 3 -->
+        <div class="grid-item grid-item-6">
+          <table>
+            <tr>
+              <td id="hour1">...</td>
+              <td><img id="hour1img" src="../img/snowy.png" /></td>
+              <td id="hour1temp">00°</td>
+            </tr>
+            <tr>
+              <td id="hour2">...</td>
+              <td><img id="hour2img" src="../img/cloudy.png" /></td>
+              <td id="hour2temp">00°</td>
+            </tr>
+            <tr>
+              <td id="hour3">...</td>
+              <td><img id="hour3img" src="../img/cloudy.png" /></td>
+              <td id="hour3temp">00°</td>
+            </tr>
+            <tr>
+              <td id="hour4">...</td>
+              <td><img id="hour4img" src="../img/rainy.png" /></td>
+              <td id="hour4temp">00°</td>
+            </tr>
+            <tr>
+              <td id="hour5">...</td>
+              <td><img id="hour5img" src="../img/stormy.png" /></td>
+              <td id="hour5temp">00°</td>
+            </tr>
+            <tr>
+              <td id="hour6">...</td>
+              <td><img id="hour6img" src="../img/sunny.png" /></td>
+              <td id="hour6temp">00°</td>
+            </tr>
+          </table>
+        </div>
 
-      <!-- part 4 -->
-      <div class="grid-item tooltip grid-item-7">
-        <div class="forecast-daily">
-          <div class="tooltip-text">
-            <p>
-              <b>Humidity:</b> Indicates the amount of moisture in the air. High
-              humidity can make it feel warmer, while low humidity may lead to a
-              drier atmosphere.
-            </p>
+        <!-- part 4 -->
+        <div class="grid-item tooltip grid-item-7">
+          <div class="forecast-daily">
+            <div class="tooltip-text">
+              <p>
+                <b>Humidity:</b> Indicates the amount of moisture in the air.
+                High humidity can make it feel warmer, while low humidity may
+                lead to a drier atmosphere.
+              </p>
+            </div>
+            <div class="day">
+              <span><img src="../img/humidity.png" id="icon-humidity" /></span
+              >Humidity
+            </div>
+            <span class="day-details" id="humidity">00%</span>
           </div>
-          <div class="day">
-            <span><img src="../img/humidity.png" id="icon-humidity" /></span
-            >Humidity
+        </div>
+        <div class="grid-item tooltip grid-item-8">
+          <div class="forecast-daily">
+            <div class="tooltip-text">
+              <p>
+                <b>Temperature (Feels Like, Min, Max):</b> Shows perceived
+                temperature, factoring in humidity and wind, with daily minimum
+                and maximum values.
+              </p>
+            </div>
+            <div class="day" id="temperatures">
+              <span
+                ><img src="../img/temperature.png" id="icon-temperature"
+              /></span>
+              Feels like:
+            </div>
+            <span id="feels_like"> 00°</span>
+            <p class="temp-feels">Min: <span id="temp_min">00°</span></p>
+            <p class="temp-feels">Max: <span id="temp_max">00°</span></p>
           </div>
-          <span class="day-details" id="humidity">00%</span>
+        </div>
+        <div class="grid-item tooltip grid-item-9">
+          <div class="forecast-daily">
+            <div class="tooltip-text">
+              <p>
+                <b>Pressure:</b> Indicates atmospheric pressure. High pressure
+                often means fair weather, while low pressure may signal
+                unsettled conditions.
+              </p>
+            </div>
+            <div class="day">
+              <span><img src="../img/pressure.png" id="icon-pressure" /></span
+              >Pressure
+            </div>
+            <div class="day-details" id="pressure">Loading...</div>
+          </div>
+        </div>
+        <div class="grid-item tooltip grid-item-10">
+          <div class="forecast-daily">
+            <div class="tooltip-text">
+              <p>
+                <b>Wind:</b> Shows speed and direction. Speed influences
+                temperature perception, and direction indicates the source of
+                the wind.
+              </p>
+            </div>
+            <div class="day" id="wind">
+              <span><img src="../img/wind.png" id="icon-wind" /></span>Wind
+            </div>
+            <div class="day-details">
+              <span id="windSpeed">Loading...</span>
+              <span id="direction">Loading...</span>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="grid-item tooltip grid-item-8">
-        <div class="forecast-daily">
-          <div class="tooltip-text">
-            <p>
-              <b>Temperature (Feels Like, Min, Max):</b> Shows perceived
-              temperature, factoring in humidity and wind, with daily minimum
-              and maximum values.
-            </p>
-          </div>
-          <div class="day" id="temperatures">
-            <span
-              ><img src="../img/temperature.png" id="icon-temperature"
-            /></span>
-            Feels like:
-          </div>
-          <span id="feels_like"> 00°</span>
-          <p class="temp-feels">Min: <span id="temp_min">00°</span></p>
-          <p class="temp-feels">Max: <span id="temp_max">00°</span></p>
-        </div>
-      </div>
-      <div class="grid-item tooltip grid-item-9">
-        <div class="forecast-daily">
-          <div class="tooltip-text">
-            <p>
-              <b>Pressure:</b> Indicates atmospheric pressure. High pressure
-              often means fair weather, while low pressure may signal unsettled
-              conditions.
-            </p>
-          </div>
-          <div class="day">
-            <span><img src="../img/pressure.png" id="icon-pressure" /></span
-            >Pressure
-          </div>
-          <div class="day-details" id="pressure">Loading...</div>
-        </div>
-      </div>
-      <div class="grid-item tooltip grid-item-10">
-        <div class="forecast-daily">
-          <div class="tooltip-text">
-            <p>
-              <b>Wind:</b> Shows speed and direction. Speed influences
-              temperature perception, and direction indicates the source of the
-              wind.
-            </p>
-          </div>
-          <div class="day" id="wind">
-            <span><img src="../img/wind.png" id="icon-wind" /></span>Wind
-          </div>
-          <div class="day-details">
-            <span id="windSpeed">Loading...</span>
-            <span id="direction">Loading...</span>
-          </div>
-        </div>
+      <!-- home -->
+      <div class="home-icon-container" onclick="goHome()">
+        <span id="home"
+          ><i class="ri-arrow-left-circle-line"></i>Back to Home</span
+        >
       </div>
     </div>
-    <!-- home -->
-    <div class="home-icon-container" onclick="goHome()">
-      <span id="home"
-        ><i class="ri-arrow-left-circle-line"></i>Back to Home</span
-      >
-    </div>
-  </div>
     <!-- Content: End -->
   </body>
 </html>
