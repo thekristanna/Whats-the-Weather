@@ -452,6 +452,13 @@ $(document).ready(function () {
         let temp_max = round(w.main.temp_max);
 
         let weather = centralizeWeather(w.weather[0].description);
+        if (weather === "Clear") {
+          if (w.dt > w.sys.sunrise) {
+            if (w.dt < w.sys.sunset) {
+              weather = "Sunny";
+            }
+          }
+        }
 
         setBackgroundImage(weather, w.dt);
 
