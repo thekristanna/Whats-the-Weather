@@ -33,6 +33,10 @@ body {
   align-items: center;
   text-align: center;
 }
+#logo {
+  width: 100px;
+  animation: upDown 5s linear infinite;
+} 
 .search {
   margin-top: 20px;
   text-align: start;
@@ -122,6 +126,19 @@ button img:hover {
   animation: hover-move 0.6s ease-in-out alternate infinite;
 }
 /* Content: Keyframes */
+@keyframes upDown {
+  0%,
+  50%,
+  100% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-10px);
+  }
+  75% {
+    transform: translateY(10px);
+  }
+}
 @keyframes hover-move {
   from {
     transform: translateX(2px);
@@ -130,6 +147,7 @@ button img:hover {
     transform: translateX(-2px);
   }
 }
+
 /* Content: Media Query */
 @media (max-width: 500px) {
   .weather {
